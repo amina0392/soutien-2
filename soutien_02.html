@@ -18,10 +18,12 @@
         <ul>
             <li>faire les points dans l'ordre et ne passer au point suivant que lorsque le précédent est achevé
                 et testé,</li>
-            <li>utiliser la console autant que nécessaire Pour bien observer le contenu et le type des différentes variables,</li>
+            <li>utiliser la console autant que nécessaire Pour bien observer le contenu et le type des différentes
+                variables,</li>
             <li>écrire du code structuré et correctement indenté,</li>
             <li>écrire du code <strong>largement documenté !</strong></li>
-            <li>l'ajout du code JavaScript est fait entre les balises &lt;script&gt;...&lt;script&gt; de ce fichiet html</li>
+            <li>l'ajout du code JavaScript est fait entre les balises &lt;script&gt;...&lt;script&gt; de ce fichiet html
+            </li>
         </ul>
         <p>Eléments de départ fournis quel que soit l'exercice :</p>
         <ul>
@@ -35,15 +37,17 @@
                     <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de
                         type Array,</li>
                 </ul>
-                L'utilisation de ces outils n'est pas systématiquement nécessaire (cela dépend des exercices). Par contre, 
+                L'utilisation de ces outils n'est pas systématiquement nécessaire (cela dépend des exercices). Par
+                contre,
                 <span class="text-danger">vous n'avez, en aucun cas, besoin</span> :
                 <ul>
                     <li><span class="text-danger">de modifier le code</span> de ces outils,</li>
-                    <li><span class="text-danger">de copier le code</span> des fonctions contenues dans <em>tools.js</em> dans 
+                    <li><span class="text-danger">de copier le code</span> des fonctions contenues dans
+                        <em>tools.js</em> dans
                         votre propre code.<br>
                         Si vous utilisez les fonctions outils, vous ne pouvez que les "appeler".</li>
                 </ul>
-                
+
             </li>
         </ul>
         <h5 class="text-success text-center">Que la force soit avec vous !</h5>
@@ -54,15 +58,17 @@
         <p class="h6 font-weight-bold text-center">Soutien-2 #02 - Une fonction pas à pas</p>
         <p>Remplir la zone <em>&lt;script&gt;...&lt;/script&gt;</em> ci-dessous pour réaliser les points suivants :</p>
         <ol>
-            <li><u>Préliminaire</u> : Que faut-il faire (ou écrire) pour que tous les points suivants soient exécutés seulement 
+            <li><u>Préliminaire</u> : Que faut-il faire (ou écrire) pour que tous les points suivants soient exécutés
+                seulement
                 lors de l'appui sur le bouton "Go !" ?</li>
             <li>Récupérer la valeur saisie.</li>
             <li>Tester la valeur saisie ; celle-ci doit être un nombre valide entre 5 et 15.</li>
             <li>Calculer le cube de la valeur saisie.<br>
-                Pour rappel, si on nomme <em>x</em> la valeur saisie, son cube vaut <em>x<sup>3</sup> = x * x * x</em>.</li>
+                Pour rappel, si on nomme <em>x</em> la valeur saisie, son cube vaut <em>x<sup>3</sup> = x * x * x</em>.
+            </li>
             <li>Afficher le résultat en utilisant la fonction <code>displayResult</code><br>
-                Pour une utilisation correcte, bien lire le commentaire et la signature de 
-                cette fonction (dans <em>tools.js</em>) ; il n'est pas -encore- nécessaire 
+                Pour une utilisation correcte, bien lire le commentaire et la signature de
+                cette fonction (dans <em>tools.js</em>) ; il n'est pas -encore- nécessaire
                 d'en comprendre le fonctionnement interne.</li>
         </ol>
         <p>Les différentes étapes sont rappelées dans le code.</p>
@@ -84,20 +90,27 @@
 
     <!-- javascript part -->
     <script type="text/javascript">
-
         // Your code here...
 
         // Step 0: que faut-il écrire pour répondre à l'événement "onclick" ?
-        
-        // Step 1: récupérer la valeur saisie
+        // Il faut écrire une fonction go()
+        function go() {
+            // Step 1: récupérer la valeur saisie
+            let myNumber = document.getElementById("number").value;
 
-        // Step 2: tester la valeur saisie ; doit être un nombre valide entre 5 et 15
-
-        // Step 3: calculer le cube de la valeur saisie
-        // Pour rappel si on appele x la valeur saisie, son cube vaut x * x * x
-
-        // Step 4: Afficher le résultat en utilisant la fonction displayResult 
-
+            // Step 2: tester la valeur saisie ; doit être un nombre valide entre 5 et 15
+            // Step 3: calculer le cube de la valeur saisie
+            // Pour rappel si on appele x la valeur saisie, son cube vaut x * x * x
+            if (isNaN(myNumber) || (myNumber <5) || (myNumber>15)) {
+                alert("Vous devez saisir un nombre entre 5 et 15");
+            }
+            // Step 4: Afficher le résultat en utilisant la fonction displayResult 
+            else {
+                myNumber = myNumber * myNumber * myNumber;
+                displayResult("Votre resultat est de : ", myNumber); 
+            }
+        }
+         
     </script>
 </body>
 

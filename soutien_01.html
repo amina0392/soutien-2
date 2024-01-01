@@ -18,10 +18,12 @@
         <ul>
             <li>faire les points dans l'ordre et ne passer au point suivant que lorsque le précédent est achevé
                 et testé,</li>
-            <li>utiliser la console autant que nécessaire Pour bien observer le contenu et le type des différentes variables,</li>
+            <li>utiliser la console autant que nécessaire Pour bien observer le contenu et le type des différentes
+                variables,</li>
             <li>écrire du code structuré et correctement indenté,</li>
             <li>écrire du code <strong>largement documenté !</strong></li>
-            <li>l'ajout du code JavaScript est fait entre les balises &lt;script&gt;...&lt;script&gt; de ce fichiet html</li>
+            <li>l'ajout du code JavaScript est fait entre les balises &lt;script&gt;...&lt;script&gt; de ce fichiet html
+            </li>
         </ul>
         <p>Eléments de départ fournis quel que soit l'exercice :</p>
         <ul>
@@ -35,15 +37,17 @@
                     <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de
                         type Array,</li>
                 </ul>
-                L'utilisation de ces outils n'est pas systématiquement nécessaire (cela dépend des exercices). Par contre, 
+                L'utilisation de ces outils n'est pas systématiquement nécessaire (cela dépend des exercices). Par
+                contre,
                 <span class="text-danger">vous n'avez, en aucun cas, besoin</span> :
                 <ul>
                     <li><span class="text-danger">de modifier le code</span> de ces outils,</li>
-                    <li><span class="text-danger">de copier le code</span> des fonctions contenues dans <em>tools.js</em> dans 
+                    <li><span class="text-danger">de copier le code</span> des fonctions contenues dans
+                        <em>tools.js</em> dans
                         votre propre code.<br>
                         Si vous utilisez les fonctions outils, vous ne pouvez que les "appeler".</li>
                 </ul>
-                
+
             </li>
         </ul>
         <h5 class="text-success text-center">Que la force soit avec vous !</h5>
@@ -53,11 +57,13 @@
     <div class="card subject">
         <p class="h6 font-weight-bold text-center">Soutien-2 #01 - Appel de fonction</p>
         <p>Soit la fonction <code>hello</code> déclarée de la manière suivante :</p>
-        <blockquote><pre>function hello (a, b) {
+        <blockquote>
+            <pre>function hello (a, b) {
     return (2 * a) - b;
 }</pre>
         </blockquote>
-        <blockquote><pre>function hi (a) {
+        <blockquote>
+            <pre>function hi (a) {
     return (a * a) % 3;
 }</pre>
         </blockquote>
@@ -69,9 +75,12 @@
             <li>Que fait la fonction <code>hi</code> ?</li>
             <li>Que vaut <code>resultTwo</code> si on écrit <code>resultTwo = hi (4);</code> ?</li>
             <li>Que vaut <code>resultThree</code> si j'écris <code>resultThree = hi (hello(1, 4));</code> ?</li>
-            <li>Que vaut <code>resultFour</code> si j'écris <code>resultFour = hello (resultTwo, hello(1, 4));</code> ?</li>
-            <li>Ecrire le code des fonctions <code>hello</code> et <code>hi</code> dans la console ou à la fin de ce fichier (dans la 
-                zone de <em>&lt;script&gt;...&lt;/script&gt;</em>) et vérifier que les résultats attendus pour les différents calculs 
+            <li>Que vaut <code>resultFour</code> si j'écris <code>resultFour = hello (resultTwo, hello(1, 4));</code> ?
+            </li>
+            <li>Ecrire le code des fonctions <code>hello</code> et <code>hi</code> dans la console ou à la fin de ce
+                fichier (dans la
+                zone de <em>&lt;script&gt;...&lt;/script&gt;</em>) et vérifier que les résultats attendus pour les
+                différents calculs
                 sont corrects.</li>
         </ol>
     </div>
@@ -83,9 +92,34 @@
 
     <!-- javascript part -->
     <script type="text/javascript">
+        // 1. a et b sont les paramètres de la fonction hello
+        /* 2. On déclare une variable resultOne qui est égale à la fonction hello qui a pour valeur 2 et 3. 
+         * 2 et 3 sont les valeurs de la fonction hello. resultOne = (2 * 2) - 3. 
+         * resultOne est donc égale à 1.*/
+        // 3. La fonction hi passe en parametre a et retourne (a * a) / 3.
+        // 4. Si on écrit resultTwo = hi (4), resultTwo = (4 * 4) / 3, resultTwo est donc égale 16/3 = 5.33.
+        /* 5. Si on écrit resultThree = hi (hello(1, 4)), resultThree = (hello(1, 4) * hello (1, 4)) / 3, 
+         * resultThree est donc égale (-2 * -2) / 3. Ce qui fait 4/3 = 1.33 */
+        /* Si on écrit resultFour = hello (resultTwo, hello(1, 4)), resultFour = hello(5.33, -2),
+         * resultFour est donc égale = (2 * 5.33) - (-2), ce qui est égale = 12.66 */
 
-        // Your code here...
+        function hello(a, b) {
+            return (2 * a) - b;
 
+        }
+
+        function hi(a) {
+            return (a * a)/3;
+
+        }
+        let resultOne = hello(2, 3);
+        let resultTwo = hi(4);
+        let resultThree = hi(hello(1, 4));
+        let resultFour = hello(resultTwo, hello(1, 4));
+        console.log(resultOne);
+        console.log(resultTwo);
+        console.log(resultThree);
+        console.log(resultFour);
     </script>
 </body>
 

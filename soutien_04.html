@@ -76,6 +76,24 @@
     <script type="text/javascript">
 
         // Your code here...
+        function cube() {
+            let myNumber = document.getElementById("number").value;
+            if (isNaN(myNumber) || (myNumber < 5) || (myNumber > 15)) {
+                alert("Vous devez saisir un nombre entre 5 et 15");
+            }
+            else if (myNumber % 2 === 0){
+                myNumber = myNumber * myNumber * myNumber;
+                displayResult("Votre resultat est de : ", myNumber)
+            }
+            else {
+                myNumber = myNumber * myNumber;
+                displayResult("Votre resultat est de : ", myNumber);
+            }
+        }
+
+        function go() {
+            cube();
+        }
 
     </script>
 </body>
